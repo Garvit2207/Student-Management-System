@@ -1,0 +1,96 @@
+#body-header{
+background-image: url("images/Profile.png");
+background-size: cover;
+height: 75vh;
+/*width: 75vw;*/
+background-position: center;
+background-attachment: fixed;
+/*background-color: #f9f6ee;*/
+}
+
+
+a:link{
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+nav ul li{
+	text-decoration: none;
+	display: inline-block;
+	padding: 12px;
+	font-family: 'roboto';
+	color: whitesmoke;
+	font-size: 17px;
+}
+
+nav ul li a:link{
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+nav ul li a:visited{
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  color: #fe3e4c;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+nav{
+	background-color: #064c56;
+	border-radius: 20px;
+}
+
+.name{
+
+color: white;
+text-align: center;
+font-size: 5vw;
+
+}
+
+.college{
+
+color: white;
+text-align: center;
+
+}
+
+hr{
+	display: inline-block;
+	width: 7vw;
+}
+.college h1{
+	display:inline-block ;
+}
+
+.image{
+
+background-image: url("images/Garvit_photo.jpg");
+width: 15vw;
+height: 15vw;
+background-size: cover;
+border-radius: 100%;
+text-align: center;
+/*border: 2px solid blue;*/
+
+}
+
+body{
+	background-color: #F9F6EE;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}

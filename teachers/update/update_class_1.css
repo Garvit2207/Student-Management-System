@@ -1,0 +1,19 @@
+   
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border-color: #064c56;
+  }
+  
+  body{
+      background-color: #F9F6EE;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+  }
+  table{
+      margin-top: 1vw;
+  }

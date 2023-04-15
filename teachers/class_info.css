@@ -1,0 +1,99 @@
+#body-header {
+    background-image: url("../images/theme.png");
+    height: auto;
+    width: auto;
+    background-position: cover;
+    background-attachment: fixed;
+    }
+    
+    li{
+        text-decoration: none;
+        display: inline-block;
+        padding-right: 1vw;
+        font-family: 'roboto';
+        color: whitesmoke;
+        font-size: 2vh;
+    }
+    
+    a:link{
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:visited{
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:hover{
+      color: #fe3e4c;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    header{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    main{
+        text-align: center;
+        font-size: 2vw;
+        height: auto;
+        color:  #F9F6EE;
+    padding-bottom: 0.2vw;
+    }
+    
+    
+    main h1:hover{
+        color: 	white;
+    }
+
+    main h1{
+
+      margin-top: 0.5vw;
+    }
+
+    .sems ul li a{
+      font-size: 2vh;
+      letter-spacing: 0.25vw;
+      color: black;
+    }
+        
+    table, th, td {
+      border: 2px solid black;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      border-color: #064c56;
+    }
+    
+    body{
+        background-color: #F9F6EE;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    table{
+        margin-top: 1vw;
+    }
+    /* .animated-text {
+        font-family: Impact;
+        background-image: url("images/fire.jpg");
+        background-size: 100% 50px;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-animation: stripes 2s linear infinite;
+        animation: stripes 2s linear infinite;
+        font-size: 5vw;
+      }
+      @-webkit-keyframes stripes {
+        100% {
+          background-position: 0 -50px;
+        }
+      } */
