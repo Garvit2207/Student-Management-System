@@ -3,7 +3,7 @@ require_once('db.php');
 $name = $_GET['name'];
 $email =  $_GET['email'];
 $class = $_GET['class'];
-$query = "SELECT s.username, s.email, s.Class, tg.subject, exam.marks from students s INNER JOIN teachers t INNER JOIN tagging tg INNER JOIN sem1info exam ON tg.t_email = t.email AND tg.class_allot = s.class AND s.email = exam.student_email AND tg.subject = exam.subject WHERE t.email = '$email' AND tg.class_allot = '$class';";
+$query = "SELECT s.username, s.email, s.Class, tg.subject, exam.marks from students s INNER JOIN teachers t INNER JOIN tagging tg INNER JOIN sem1info exam ON tg.t_email = t.email AND tg.class_allot = s.class AND s.email = exam.student_email AND tg.subject = exam.subject WHERE t.email = '$email' AND tg.class_allot = '$class'";
 $result = mysqli_query($con,$query);
 
 if(!$result){
@@ -50,7 +50,7 @@ if(!$result){
 <div class="sems">
 	<div style="display: inline-block;">
 			<ul>
-				<li style="background-color:#F4B400;  border-radius: 25px; padding: 10px; width: auto; height: auto; text-align: center;" ><a href=<?php echo "update_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Class 1</a></li>
+				<li style="background-color:#F4B400;  border-radius: 25px; padding: 10px; width: auto; height: auto; text-align: center;"><a href=<?php echo "update_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Class 1</a></li>
 				<li><a href=<?php echo "update_class_2.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=2" ?>>class 2</a></li>
 			</ul>
 		</div>
@@ -82,8 +82,7 @@ if(!$result){
 			<td>  <?php echo $row['Class'];  ?>  </td>
 			<td>  <?php echo $row['subject'];  ?>  </td>
 			<td>  <?php echo $row['marks'];  ?>  </td>
-			<td><a style = "color:#064c56" href= <?php echo 'update_form.php?student_name='. $row['username'].'&student_email='.$row['email'].'&name='.$_GET['name'].'&subject='.$row['subject'].'&class=1'.'&teacher_email='.$email.'&marks='.$row['marks']?> data-toggle="tooltip" data-placement="top" title="Update!"><i class ="fa fa-edit" aria-hidden="true"></i></a></td>
-
+			<td><a style = "color:#064c56" href= <?php echo 'update_form.php?student_name='. urlencode($row['username']).'&student_email='.$row['email'].'&name='.$_GET['name'].'&subject='.$row['subject'].'&class=1'.'&teacher_email='.$email.'&marks='.$row['marks']?> data-toggle="tooltip" data-placement="top" title="Update!"><i class ="fa fa-edit" aria-hidden="true"></i></a></td>	
 			</tr>
 			<?php	
 	 	}

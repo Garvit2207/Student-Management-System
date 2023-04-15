@@ -49,7 +49,7 @@ body {
 
 
 #body-header {
-	background-image: url("images/theme.png");
+	background-image: url("../images/theme.png");
 	height: auto;
 	width: auto;
 	background-position: cover;

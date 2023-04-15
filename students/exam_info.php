@@ -48,10 +48,10 @@ if(!$result){
 <div class="sems">
 	<div style="display: inline-block;">
 			<ul>
-				<li style="background-color:#F4B400;  border-radius: 25px; padding: 10px; width: 67px; height: 20px; text-align: center;" ><a href="exam_info.html"><a href="st_homepg.html">Sem 1</a></li>
-				<li><a href="profile.html">Sem 2</a></li>
-				<li><a href="index.html">Sem 3</a></li>
-				<li><a href="index.html">Sem 4</a></li>
+				<li style="background-color:#F4B400;  border-radius: 25px; padding: 10px; width: 67px; height: 20px; text-align: center;" ><a href=<?php echo "exam_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Sem 1</a></li>
+				<li><a href=<?php echo "exam_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Sem 2</a></li>
+				<li><a href=<?php echo "exam_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Sem 3</a></li>
+				<li><a href=<?php echo "exam_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Sem 4</a></li>
 			</ul>
 		</div>
 </div>

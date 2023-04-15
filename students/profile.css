@@ -1,5 +1,5 @@
 #body-header{
-background-image: url("images/Profile.png");
+background-image: url("../images/Profile.png");
 background-size: cover;
 height: 75vh;
 /*width: 75vw;*/
@@ -78,7 +78,7 @@ hr{
 
 .image{
 
-background-image: url("images/Garvit_photo.jpg");
+background-image: url("../images/Garvit_photo.jpg");
 width: 15vw;
 height: 15vw;
 background-size: cover;

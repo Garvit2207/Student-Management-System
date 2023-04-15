@@ -3,7 +3,7 @@ require_once('db.php');
 $name = $_GET['name'];
 $email =  $_GET['email'];
 $class = $_GET['class'];
-$query = "SELECT s.username, s.email, s.Class from students s INNER JOIN teachers t INNER JOIN tagging tg ON tg.t_email = t.email AND tg.class_allot = s.class WHERE t.email = '$email' AND tg.class_allot = '$class';";
+$query = "SELECT s.username, s.email, s.Class, tg.subject from students s INNER JOIN teachers t INNER JOIN tagging tg ON tg.t_email = t.email AND tg.class_allot = s.class WHERE t.email = '$email' AND tg.class_allot = '$class';";
 $result = mysqli_query($con,$query);
 
 if(!$result){
@@ -65,6 +65,7 @@ if(!$result){
     <th>Student_name</th>
     <th>Student_email</th>
     <th>Class</th>
+	<th>Subject</th>
 <!-- <th>MAX. MRAKS</th>
 <th>GRADE AWARDED</th> -->
   </tr>
@@ -81,6 +82,8 @@ if(!$result){
 			<td>  <?php echo $row['username'];  ?>  </td>
 			<td>  <?php echo $row['email'];  ?>  </td>
 			<td>  <?php echo $row['Class'];  ?>  </td>
+			<td>  <?php echo $row['subject'];  ?>  </td>
+
 			</tr>
 			<?php	
 		}

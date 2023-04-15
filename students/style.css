@@ -42,7 +42,7 @@ body{
 
 header{
 
-background-image: url(images/index.png);
+background-image: url(../images/index.png);
 background-size: cover;
 height: 97vh;
 width: 100%;

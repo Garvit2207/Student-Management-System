@@ -1,17 +1,17 @@
 <?php
 require_once('db.php');
-$student_name =  $_GET['student_name'];
+// $student_name = str_replace("+"," ",$_GET['student_name']);
+$student_name = urlencode($_GET['student_name']);
+
 $student_email =  $_GET['student_email'];
 $name = $_GET['name'];
 $subject = $_GET['subject'];
 $class = $_GET['class'];
 $email = $_GET['teacher_email'];
 $marks = $_GET['marks'];
+$update = false;
+$check_marks = false;
 
-// echo $student_name;
-// echo $subject;
-
-$update = true;
 ?>
 
 <!DOCTYPE html>
@@ -52,36 +52,46 @@ $update = true;
 
 
 <?php
+
 require_once('db.php');
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-// echo "hiiii";
 $marks = $_POST['marks'];
+if($marks>100){
+
+}else{
+	$check_marks - true;
 $sql = "UPDATE sem1info SET marks = '$marks' where student_email = '$student_email' AND subject = '$subject'";
 $result = mysqli_query($con, $sql);
 if(!$result){
     echo "Error";
+}else $update = true;
+
+if($update){
+
+	header('location: update_class_1.php?email=' .$email.'&name='.$_GET['name'].'&class=1');
+
+}else mysqli_error($result);
+
 }
-
-
 }
 
 ?>
 
-<?php
 
-if($update){
-
-echo '<a href=update_class_1.php?email=' .$email.'&name='.$_GET['name'].'&class=1>Update Marks</a>';
-
-}
-
- ?>
 
 <form method = "POST">
+<?php
+
+if($check_marks==false){
+	echo'<p style="font-size: 1.5vw; color: red; margin-bottom: 2vw; margin-right: 3vw; font-weight: bold">Invalid Marks.</p>';
+}
+
+	?>
 <div class = "container">
+
 <div id="heading_name">
 <label>Sudent Name</label>
-<input type="text" value= <?php echo "$student_name" ?> readonly>	
+<input type="text" value= <?php echo str_replace('+', '_',$student_name) ?> readonly>	
 </div>
 <div id="heading_name">
 

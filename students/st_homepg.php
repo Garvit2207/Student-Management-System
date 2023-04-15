@@ -66,7 +66,7 @@ echo "Welcome " .$_SESSION['username']. " !!";
 			<span>
 			Fees Details
 		</span>
-			 <a href="fees_details.html">
+		<a href=<?php echo "fees_details.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>
         <span class="link"></span>
       </a>
 		</div>

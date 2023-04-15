@@ -1,0 +1,99 @@
+#body-header {
+background-image: url("../images/theme.png");
+height: auto;
+width: auto;
+background-position: cover;
+background-attachment: fixed;
+/*border: 2px solid red;*/
+}
+
+body{
+	background-color: #F9F6EE;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+main{
+	text-align: center;
+	font-size: 3vw;
+	height: auto;
+	color:  #F9F6EE;
+
+}
+
+
+main h1:hover{
+	color: 	white;
+}
+
+.order_details{
+
+font-size: 1.7vw;
+letter-spacing: 0.3vw;
+line-height: 2.5vw;
+
+}
+
+.order_details ol{
+	display: inline-block;
+}
+
+.details_table{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.total_amt{
+	text-align: center;
+}
+
+.details_table{
+	margin-left: 1vw;
+}
+
+
+header nav ul li{
+	text-decoration: none;
+	display: inline-block;
+	padding-right: 1vw;
+	font-family: 'roboto';
+	color: whitesmoke;
+	font-size: 2vh;
+}
+
+header a:link{
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+header a:visited{
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+header a:hover{
+  color: #fe3e4c;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+/*	justify-content: space-around; */
+	align-items: left;
+}
+
+.details_table nav ul li{
+	text-decoration: none;
+	display: inline-block;
+	padding-right: 1vw;
+	font-family: 'roboto';
+	color: whitesmoke;
+	font-size: 1vw;
+}

@@ -1,9 +1,9 @@
 <?php
-require_once('db.php');
+require_once('db.php'); 
 $name = $_GET['name'];
 $email =  $_GET['email'];
 $class = $_GET['class'];
-$query = "SELECT s.username, s.email, s.Class from students s INNER JOIN teachers t INNER JOIN tagging tg ON tg.t_email = t.email AND tg.class_allot = s.class WHERE t.email = '$email' AND tg.class_allot = '$class';";
+$query = "SELECT s.username, s.email, s.Class, tg.subject from students s INNER JOIN teachers t INNER JOIN tagging tg ON tg.t_email = t.email AND tg.class_allot = s.class WHERE t.email = '$email' AND tg.class_allot = '$class';";
 $result = mysqli_query($con,$query);
 
 if(!$result){
@@ -49,10 +49,10 @@ if(!$result){
 	<div style="display: inline-block;">
 			<ul>
 				<li><a href=<?php echo "class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Class 1</a></li>
-				<li  style="background-color:#F4B400;  border-radius: 25px; padding: 10px; width: auto; height: auto; text-align: center;" ><a href=<?php echo "class_2.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=2" ?>>class 2</a></li>
+				<li style="background-color:#F4B400;  border-radius: 25px; padding: 10px; width: auto; height: auto; text-align: center;"><a href=<?php echo "class_2.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=2" ?>>class 2</a></li>
 				<!-- <li><a href="index.html">class 3</a></li> -->
 				<!-- <li><a href="index.html">class 4</a></li> -->
-                <li><a href=<?php echo "class_info.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>All Classes</a></li>
+				<li><a href=<?php echo "class_info.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>All Classes</a></li>
 			</ul>
 		</div>
 </div>
@@ -65,6 +65,7 @@ if(!$result){
     <th>Student_name</th>
     <th>Student_email</th>
     <th>Class</th>
+	<th>Subject</th>
 <!-- <th>MAX. MRAKS</th>
 <th>GRADE AWARDED</th> -->
   </tr>
@@ -81,6 +82,8 @@ if(!$result){
 			<td>  <?php echo $row['username'];  ?>  </td>
 			<td>  <?php echo $row['email'];  ?>  </td>
 			<td>  <?php echo $row['Class'];  ?>  </td>
+			<td>  <?php echo $row['subject'];  ?>  </td>
+
 			</tr>
 			<?php	
 		}
