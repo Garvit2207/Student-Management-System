@@ -34,10 +34,7 @@ $check_marks = true;
 				<li><a href=<?php echo "../profile.php?email=" .$email."&name=".$_GET['name'] ?>>Profile</a></li>
 				<li><a href=<?php echo "../class_info.php?email=" .$email."&name=".$_GET['name'] ?>>Class Info</a></li>
 				<li><a href=<?php echo "update_class_1.php?email=" .$email."&name=".$_GET['name']."&class=1" ?>>Update Marks</a></li>
-				<li><a href=<?php echo "../attendance.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Attendance</a></li>
-				<li><a href=<?php echo "exam_info.php?email=" .$email."&name=".$_GET['name'] ?>>Schedules</a></li>
-				<li><a href=<?php echo "exam_info.php?email=" .$email."&name=".$_GET['name'] ?>>Notice Board</a></li>
-				<li><a href=<?php echo "faculty_details.php?email=" .$email."&name=".$_GET['name'] ?>>Faculty Details</a></li>
+				<li><a href=<?php echo "../attendance.php?email=" .$email."&name=".$_GET['name'] ?>>Update Attendance</a></li>
 				<li><a href="../logout.php">Logout</a></li>
 			</ul>
 		</nav>

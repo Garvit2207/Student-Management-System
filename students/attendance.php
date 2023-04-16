@@ -67,8 +67,8 @@ if(!$result){
 <table style="width: 100%;">
 	  <tr style="color: white; background-color: black">
     <th>Subject</th>
-    <th>Attended Lactures</th>
-    <th>Total Lactures</th>
+    <th>Attended Lectures</th>
+    <th>Total Lectures</th>
 <th>Percentage</th>
   </tr>
 	

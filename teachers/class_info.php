@@ -2,6 +2,18 @@
 require_once('db.php');
 $name = $_GET['name'];
 $email =  $_GET['email'];
+
+$query = "SELECT COUNT(username) from students";
+$result = mysqli_query($con,$query);
+
+if(!$result){
+	echo mysqli_error($result);
+}else {
+	$row = mysqli_fetch_assoc($result);
+	$number_of_students = $row['COUNT(username)'];
+	// echo $number_of_students; 
+}
+
 $query = "SELECT s.username, s.email, s.Class, tg.subject from students s INNER JOIN teachers t INNER JOIN tagging tg ON tg.t_email = t.email AND tg.class_allot = s.class WHERE t.email = '$email' ORDER BY s.Class;";
 $result = mysqli_query($con,$query);
 
@@ -49,6 +61,12 @@ if(!$result){
 				<li  style="background-color:#F4B400;  border-radius: 25px; padding: 10px; width: auto; height: auto; text-align: center;"><a href=<?php echo "class_info.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>All Classes</a></li>
 			</ul>
 		</div>
+
+		<p style = "display: inline-block; margin-left: 50vw;"> Total Students =
+		<?php
+   echo $number_of_students;
+		?>
+
 </div>
 
 <div class="marks">
