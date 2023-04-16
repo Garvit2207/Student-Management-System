@@ -77,7 +77,7 @@ echo "Welcome " .$_SESSION['username']. " !!";
 			<span>
 			Attandence
 		</span>
-			 <a href="https://www.w3docs.com/">
+		<a href=<?php echo "attendance.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>
         <span class="link"></span>
       </a>
 		</div>
@@ -96,21 +96,10 @@ echo "Welcome " .$_SESSION['username']. " !!";
 
 <div id="heading_name">
 	<div id="options">
-		<span>
-			Notice Board
-		</span>
-			 <a href="https://www.w3docs.com/">
-        <span class="link"></span>
-      </a>
-	</div>
-	</div>
-
-<div id="heading_name">
-	<div id="options">
 				<span>
 			Faculty Details
 		</span>
-			 <a href="faculty_details.html">
+		<a href=<?php echo "faculty_details.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>
         <span class="link"></span>
       </a>
 	</div>

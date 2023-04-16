@@ -25,7 +25,6 @@ $email = $_GET['email'];
 				<li><a href=<?php echo "fees_details.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Fees Details</a></li>
 				<li><a href=<?php echo "attendance.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Attandence</a></li>
 				<li><a href=<?php echo "exam_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Schedules</a></li>
-				<li><a href=<?php echo "exam_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Notice Board</a></li>
 				<li><a href=<?php echo "faculty_details.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Faculty Details</a></li>
 				<li><a href="logout.php">Logout</a></li>
 		</ul>
@@ -53,7 +52,7 @@ echo '<h1 class="name">'.$name.'</h1>'
 </div>
 </div>
 <div style="margin: auto; text-align: center; width: 15vw">
-	<div class="image">
+	<div class="image" <?php echo "style = 'background-image: url(../images/".$name."_photo.jpg);'" ?>>
 </div>
 </div>
 

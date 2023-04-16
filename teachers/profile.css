@@ -1,7 +1,7 @@
 #body-header{
 background-image: url("../images/Profile.png");
 background-size: cover;
-height: 75vh;
+height: 40vh;
 /*width: 75vw;*/
 background-position: center;
 background-attachment: fixed;
@@ -57,7 +57,7 @@ nav{
 
 color: white;
 text-align: center;
-font-size: 5vw;
+font-size: 4vw;
 
 }
 
@@ -78,7 +78,7 @@ hr{
 
 .image{
 
-background-image: url("../images/Garvit_photo.jpg");
+/* background-image: url("../images/Garvit_photo.jpg"); */
 width: 15vw;
 height: 15vw;
 background-size: cover;

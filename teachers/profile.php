@@ -6,7 +6,6 @@ if(!isset($_SESSION) || ($_SESSION['loggedin'] != true)){
 	header("location: index.php");
 	exit;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -23,13 +22,11 @@ if(!isset($_SESSION) || ($_SESSION['loggedin'] != true)){
 	
 	<nav>
 		<ul>
-		<li><a href=<?php echo "t_home.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>Home</a></li>
 				<li><a href=<?php echo "profile.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>Profile</a></li>
 				<li><a href=<?php echo "class_info.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>Class Info</a></li>
 				<li><a href=<?php echo "update/update_class_1.php?email=" .$_SESSION['email']."&name=".$_SESSION['username']."&class=1" ?>>Update Marks</a></li>
+				<li><a href=<?php echo "update_attendance/attendance_class_1.php?email=" .$_SESSION['email']."&name=".$_SESSION['username']."&class=1" ?>>Update Attendance</a></li>
 				<li><a href=<?php echo "class_info.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>Schedules</a></li>
-				<li><a href=<?php echo "class_info.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>Notice Board</a></li>
-				<li><a href=<a href=<?php echo "class_info.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>Faculty Details</a></li>
 				<li><a href="logout.php">Logout</a></li>
 		</ul>
 	</nav>
@@ -39,9 +36,10 @@ if(!isset($_SESSION) || ($_SESSION['loggedin'] != true)){
 <div class="intro">
 <?php
 
-echo '<h1 class="name">'.$_SESSION['username'].'</h1>'
+echo '<h1 class="name">Welcome, '.$_SESSION['username'].'</h1>'
 
-?>	
+?>
+
 <div class="college">
 	<h4 style="text-align: center; margin-top: -2.5vw; font-size: 1.2vw;">CSED</h4>
 	<div style="display: inline-block; text-align: center;">
@@ -56,7 +54,7 @@ echo '<h1 class="name">'.$_SESSION['username'].'</h1>'
 </div>
 </div>
 <div style="margin: auto; text-align: center; width: 15vw">
-	<div class="image">
+<div class="image" <?php echo "style = 'background-image: url(../images/".$_SESSION['username']."_photo.jpg);'" ?>>
 </div>
 </div>
 

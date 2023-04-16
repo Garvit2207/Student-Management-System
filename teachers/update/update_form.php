@@ -10,7 +10,7 @@ $class = $_GET['class'];
 $email = $_GET['teacher_email'];
 $marks = $_GET['marks'];
 $update = false;
-$check_marks = false;
+$check_marks = true;
 
 ?>
 
@@ -31,11 +31,10 @@ $check_marks = false;
 		
 		<nav style="display: inline-block;">
 			<ul>
-                <li><a href=<?php echo "st_homepg.php?email=" .$email."&name=".$_GET['name'] ?>>Home</a></li>
 				<li><a href=<?php echo "../profile.php?email=" .$email."&name=".$_GET['name'] ?>>Profile</a></li>
 				<li><a href=<?php echo "../class_info.php?email=" .$email."&name=".$_GET['name'] ?>>Class Info</a></li>
 				<li><a href=<?php echo "update_class_1.php?email=" .$email."&name=".$_GET['name']."&class=1" ?>>Update Marks</a></li>
-				<li><a href=<?php echo "attendance.php?email=" .$email."&name=".$_GET['name'] ?>>Attandence</a></li>
+				<li><a href=<?php echo "../attendance.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Attendance</a></li>
 				<li><a href=<?php echo "exam_info.php?email=" .$email."&name=".$_GET['name'] ?>>Schedules</a></li>
 				<li><a href=<?php echo "exam_info.php?email=" .$email."&name=".$_GET['name'] ?>>Notice Board</a></li>
 				<li><a href=<?php echo "faculty_details.php?email=" .$email."&name=".$_GET['name'] ?>>Faculty Details</a></li>
@@ -57,9 +56,8 @@ require_once('db.php');
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 $marks = $_POST['marks'];
 if($marks>100){
-
+$check_marks = false;
 }else{
-	$check_marks - true;
 $sql = "UPDATE sem1info SET marks = '$marks' where student_email = '$student_email' AND subject = '$subject'";
 $result = mysqli_query($con, $sql);
 if(!$result){
