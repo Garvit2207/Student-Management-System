@@ -26,7 +26,7 @@ if(!isset($_SESSION) || ($_SESSION['loggedin'] != true)){
 				<li><a href=<?php echo "class_info.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>Class Info</a></li>
 				<li><a href=<?php echo "update/update_class_1.php?email=" .$_SESSION['email']."&name=".$_SESSION['username']."&class=1" ?>>Update Marks</a></li>
 				<li><a href=<?php echo "update_attendance/attendance_class_1.php?email=" .$_SESSION['email']."&name=".$_SESSION['username']."&class=1" ?>>Update Attendance</a></li>
-				<li><a href=<?php echo "class_info.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>Schedules</a></li>
+				<li><a href=<?php echo "schedules.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>Schedules</a></li>
 				<li><a href="logout.php">Logout</a></li>
 		</ul>
 	</nav>
@@ -36,12 +36,13 @@ if(!isset($_SESSION) || ($_SESSION['loggedin'] != true)){
 <div class="intro">
 <?php
 
-echo '<h1 class="name">Welcome, '.$_SESSION['username'].'</h1>'
+echo '<h1 class="name">Welcome, Dr.'.$_SESSION['username'].'</h1>'
 
 ?>
 
 <div class="college">
-	<h4 style="text-align: center; margin-top: -2.5vw; font-size: 1.2vw;">CSED</h4>
+	<h4 style="text-align: center; margin-top: -2vw; font-size: 1.2vw;">CSED</h4>
+	<div style="margin-top: -2vw">
 	<div style="display: inline-block; text-align: center;">
 		<hr>
 	</div>
@@ -50,6 +51,7 @@ echo '<h1 class="name">Welcome, '.$_SESSION['username'].'</h1>'
 	</div>
 <div style="display: inline-block;">
 	<hr>
+</div>
 </div>
 </div>
 </div>

@@ -17,6 +17,24 @@ if(!$result){
 $query = "SELECT s.username, s.email, s.Class, tg.subject from students s INNER JOIN teachers t INNER JOIN tagging tg ON tg.t_email = t.email AND tg.class_allot = s.class WHERE t.email = '$email' ORDER BY s.Class;";
 $result = mysqli_query($con,$query);
 
+// CURSOR
+
+// $query = "
+
+// DECLARE
+//        CURSOR C1 IS SELECT s.username, s.email, s.Class, tg.subject from students s INNER JOIN teachers t INNER JOIN tagging tg ON tg.t_email = t.email AND tg.class_allot = s.class WHERE t.email = '$email' ORDER BY s.Class;
+//        REC C1%ROWTYPE;
+// BEGIN
+//     OPEN C1;
+// 	LOOP
+// 	    FETCH C1 INTO REC;
+// 		EXIT WHEN C1%NOTFOUND;
+//         DBMS_OUTPUT.PUT_LINE('C1.username');
+//     END LOOP;
+// 	CLOSE C1;
+// END;
+// ";
+
 if(!$result){
 	echo mysqli_error($result);
 }
@@ -41,7 +59,7 @@ if(!$result){
 				<li><a href=<?php echo "class_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Class Info</a></li>
 				<li><a href=<?php echo "update/update_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Update Marks</a></li>
 				<li><a href=<?php echo "update_attendance/attendance_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Update Attendance</a></li>
-				<li><a href=<?php echo "exam_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Schedules</a></li>
+				<li><a href=<?php echo "schedules.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Schedules</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</nav>
@@ -62,7 +80,7 @@ if(!$result){
 			</ul>
 		</div>
 
-		<p style = "display: inline-block; margin-left: 50vw;"> Total Students =
+		<p style = "display: inline-block; margin-left: 60vw;"> Total Students =
 		<?php
    echo $number_of_students;
 		?>

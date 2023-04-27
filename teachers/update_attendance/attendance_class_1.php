@@ -3,7 +3,7 @@ require_once('db.php');
 $name = $_GET['name'];
 $email =  $_GET['email'];
 $class = $_GET['class'];
-$query = "SELECT s.username, s.email, s.Class, tg.subject, att.attendance from students s INNER JOIN teachers t INNER JOIN tagging tg INNER JOIN class1_attendance att ON tg.t_email = t.email AND tg.class_allot = s.class AND s.email = att.st_email AND tg.subject = att.subject WHERE t.email = '$email' AND tg.class_allot = '$class'";
+$query = "SELECT s.username, s.email, s.Class, tg.subject, att.attendance from students s INNER JOIN teachers t INNER JOIN tagging tg INNER JOIN class1_attendance att ON tg.t_email = t.email AND tg.class_allot = s.class AND 	s.email = att.st_email AND tg.subject = att.subject WHERE t.email = '$email' AND tg.class_allot = '$class'";
 $result = mysqli_query($con,$query);
 
 if(!$result){
@@ -21,7 +21,7 @@ if(!$result){
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-	<title>Class info</title>
+	<title>Update Attendance</title>
 </head>
 <body>
 	<div id="body-header">
@@ -33,7 +33,7 @@ if(!$result){
 				<li><a href=<?php echo "../class_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Class Info</a></li>
 				<li><a href=<?php echo "../update/update_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Update Marks</a></li>
 				<li><a href=<?php echo "attendance_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Update Attendance</a></li>
-				<li><a href=<?php echo "../exam_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Schedules</a></li>
+				<li><a href=<?php echo "../schedules.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Schedules</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</nav>
@@ -53,7 +53,7 @@ if(!$result){
 				<!-- <li  style="background-color:#F4B400;  border-radius: 25px; padding: 10px; width: auto; height: auto; text-align: center;"><a href=<?php echo "class_info.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>All Classes</a></li> -->
 			</ul>
 		</div>
-		<p style = "display: inline-block; margin-left: 70vw;"><a style = "color:#064c56; margin-left:0.5vw;" href= <?php echo 'inc_class.php?class='.$class.'&teacher_email='.$email ?> data-toggle="tooltip" data-placement="top" title="Update!"><i class ="fa fa-plus" aria-hidden="true" style = " margin-right:0.5vw;"></i><?php
+		<p style = "display: inline-block; margin-left: 20vw;"><a style = "color:#064c56; margin-left:0.5vw;" href= <?php echo 'inc_class.php?class='.$class.'&teacher_email='.$email ?> data-toggle="tooltip" data-placement="top" title="Update!"><i class ="fa fa-plus" aria-hidden="true" style = " margin-right:0.5vw;"></i><?php
 	echo "Add class ".$class?></a></td>
 </p>
 </div>

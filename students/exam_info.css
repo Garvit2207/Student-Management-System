@@ -77,22 +77,6 @@ body{
 	flex-wrap: wrap;
 }
 
-/* .animated-text {
-	font-family: Impact;
-	background-image: url("images/fire.jpg");
-	background-size: 100% 50px;
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	-webkit-animation: stripes 2s linear infinite;
-	animation: stripes 2s linear infinite;
-	font-size: 5vw;
-  }
-  @-webkit-keyframes stripes {
-	100% {
-	  background-position: 0 -50px;
-	}
-  } */
-
   main h1{
 
 	margin-top: 0.5vw;

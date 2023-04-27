@@ -65,3 +65,9 @@ main {
 	padding-top: 2vw;
 	padding-bottom: 0.1vw;
 }
+
+body{
+	background-image: url('../images/luxa.org-opacity-changed-pang-yuhao-_kd5cxwZOK4-unsplash.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+  }

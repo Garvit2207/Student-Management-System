@@ -3,7 +3,7 @@ require_once('db.php');
 $name = $_GET['name'];
 $email =  $_GET['email'];
 $class = $_GET['class'];
-$query = "SELECT s.username, s.email, s.Class, tg.subject, exam.marks from students s INNER JOIN teachers t INNER JOIN tagging tg INNER JOIN sem1info exam ON tg.t_email = t.email AND tg.class_allot = s.class AND s.email = exam.student_email AND tg.subject = exam.subject WHERE t.email = '$email' AND tg.class_allot = '$class'";
+$query = "SELECT s.username, s.email, s.Class, tg.subject, exam.marks from students s INNER JOIN tagging tg INNER JOIN sem1info exam ON tg.class_allot = s.class AND s.email = exam.student_email AND exam.subject = tg.subject  WHERE tg.t_email = '$email' AND tg.class_allot = '$class' ";
 $result = mysqli_query($con,$query);
 
 if(!$result){
@@ -20,7 +20,7 @@ if(!$result){
 	<link rel="stylesheet" href="theme.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="update_class_1.css?v=<?php echo time(); ?>">
 		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-	<title>Class info</title>
+	<title>Update Marks</title>
 </head>
 <body>
 	<div id="body-header">
@@ -32,7 +32,7 @@ if(!$result){
 				<li><a href=<?php echo "../class_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Class Info</a></li>
 				<li><a href=<?php echo "update_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Update Marks</a></li>
 				<li><a href=<?php echo "../update_attendance/attendance_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Update Attendance</a></li>
-				<li><a href=<?php echo "../update_attendance/attendance_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Schedules</a></li>
+				<li><a href=<?php echo "../schedules.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Schedules</a></li>
 
 				<li><a href="../logout.php">Logout</a></li>
 			</ul>

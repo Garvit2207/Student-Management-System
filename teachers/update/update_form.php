@@ -34,7 +34,7 @@ $check_marks = true;
 				<li><a href=<?php echo "../profile.php?email=" .$email."&name=".$_GET['name'] ?>>Profile</a></li>
 				<li><a href=<?php echo "../class_info.php?email=" .$email."&name=".$_GET['name'] ?>>Class Info</a></li>
 				<li><a href=<?php echo "update_class_1.php?email=" .$email."&name=".$_GET['name']."&class=1" ?>>Update Marks</a></li>
-				<li><a href=<?php echo "../attendance.php?email=" .$email."&name=".$_GET['name'] ?>>Update Attendance</a></li>
+				<li><a href=<?php echo "../update_attendance/attendance_class_1.php?email=" .$email."&name=".$_GET['name']."&class=1" ?>>Update Attendance</a></li>
 				<li><a href="../logout.php">Logout</a></li>
 			</ul>
 		</nav>
@@ -57,6 +57,26 @@ $check_marks = false;
 }else{
 $sql = "UPDATE sem1info SET marks = '$marks' where student_email = '$student_email' AND subject = '$subject'";
 $result = mysqli_query($con, $sql);
+
+if($marks>80){
+	$sql = "UPDATE sem1info SET grade = 'A' where student_email = '$student_email' AND subject = '$subject'";
+	$result = mysqli_query($con, $sql);
+}elseif($marks>60 && $marks<=80){
+	$sql = "UPDATE sem1info SET grade = 'B' where student_email = '$student_email' AND subject = '$subject'";
+	$result = mysqli_query($con, $sql);
+}elseif($marks>40 && $marks<=60){
+	$sql = "UPDATE sem1info SET grade = 'C' where student_email = '$student_email' AND subject = '$subject'";
+	$result = mysqli_query($con, $sql);
+}elseif($marks>30 && $marks<=40){
+	$sql = "UPDATE sem1info SET grade = 'D' where student_email = '$student_email' AND subject = '$subject'";
+	$result = mysqli_query($con, $sql);
+}else {
+
+	$sql = "UPDATE sem1info SET grade = 'E' where student_email = '$student_email' AND subject = '$subject'";
+	$result = mysqli_query($con, $sql);
+
+}
+
 if(!$result){
     echo "Error";
 }else $update = true;
@@ -95,7 +115,7 @@ if($check_marks==false){
 </div>
 <div id="heading_name">
 <label>Subject</label>
-<input type="text" value= <?php echo "$subject" ?>>	
+<input type="text" value= <?php echo "$subject" ?> readonly>	
 </div>
 <div id="heading_name">
 	

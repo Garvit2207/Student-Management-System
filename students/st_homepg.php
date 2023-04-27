@@ -29,7 +29,7 @@ if(!isset($_SESSION) || ($_SESSION['loggedin'] != true)){
 	<header style="margin-top: 0px; margin-bottom: 0px; width: auto;">
 
 	<main>
-	<h2 style="margin-top: 0px; font-family: 'roboto'; color: white;"><?php
+	<h2 style="margin-top: 0px; font-family: 'Roboto'; color: white;"><?php
 
 echo "Welcome " .$_SESSION['username']. " !!";
 
@@ -88,7 +88,7 @@ echo "Welcome " .$_SESSION['username']. " !!";
 			<span>
 			Schedules
 		</span>
-			 <a href="https://www.w3docs.com/">
+		<a href=<?php echo "schedules.php?email=" .$_SESSION['email']."&name=".$_SESSION['username'] ?>>
         <span class="link"></span>
       </a>
 		</div>

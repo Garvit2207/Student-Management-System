@@ -15,7 +15,7 @@ if(!$result){
 	// echo $number_of_students; 
 }
 
-$query = "SELECT s.username, s.email, s.Class, tg.subject from students s INNER JOIN teachers t INNER JOIN tagging tg ON tg.t_email = t.email AND tg.class_allot = s.class WHERE t.email = '$email' AND tg.class_allot = '$class';";
+$query = "SELECT s.username, s.email, s.Class, tg.subject from teachers t INNER JOIN tagging tg ON tg.t_email = t.email INNER JOIN students s ON tg.class_allot = s.class WHERE t.email = '$email' AND tg.class_allot = '$class';";
 $result = mysqli_query($con,$query);
 
 if(!$result){
@@ -42,7 +42,7 @@ if(!$result){
 				<li><a href=<?php echo "class_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Class Info</a></li>
 				<li><a href=<?php echo "update/update_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Update Marks</a></li>
 				<li><a href=<?php echo "update_attendance/attendance_class_1.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Update Attendance</a></li>
-				<li><a href=<?php echo "exam_info.php?email=" .$_GET['email']."&name=".$_GET['name'] ?>>Schedules</a></li>
+				<li><a href=<?php echo "schedules.php?email=" .$_GET['email']."&name=".$_GET['name']."&class=1" ?>>Schedules</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</nav>

@@ -11,7 +11,7 @@ if(!$result){
 $row = mysqli_fetch_assoc($result);
 $teacher_name = $row['name'];
 
-$sql = "UPDATE total_classes SET total_attendance = total_attendance + 1 WHERE email = '$teacher_email' AND class='$class'";
+$sql = "UPDATE tagging SET total_lectures = total_lectures + 1 WHERE t_email = '$teacher_email' AND class_allot='$class'";
 $result = mysqli_query($con, $sql);
 
 if(!$result){
